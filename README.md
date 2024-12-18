@@ -39,7 +39,7 @@ To install the package into your R/RStudio enviornment, use the folloing command
 
 $ devtools::install_github("sarahkaarina/similaritymodels")
 
-If you don't already have devtools installed, you can use the install.packages() comnan in R:
+If you don't already have devtools installed, you can use the install.packages() command in R:
 
 $ install.packages("devtools")
 
