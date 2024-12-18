@@ -238,10 +238,10 @@ make_similarity_matrices <- function(behave_vec,
     assign(dfname[df], final_df)
 
     saveoutfilepath <- file.path(resultpath,
-                                 'final_similarity_matrices',
                                  paste0(dfname[df], ".csv"))
 
-    if(save_out == TRUE){write.csv(final_df, saveoutfilepath, row.names=FALSE)}
+    if(save_out == TRUE){
+      write.csv(final_df, saveoutfilepath, row.names=FALSE)}
 
   }
 
