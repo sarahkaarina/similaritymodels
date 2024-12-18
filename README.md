@@ -2,7 +2,7 @@
 
 **About**: R package to create similarity models (nearest neighbors, convergence, divergence, and bow tie)
 
-The R package 'similarity models' use functions built on the basis of previous work by Finn et al., (2020) and Camacho et., (2023). It also includes an additional function (bow_tie()) developed and built by the author Sarah K. Crockford, with conceptual input from Michael V. Lombardo. 
+The R package 'similarity models' uses functions built on the basis of previous work by Finn et al., (2020) and Camacho et., (2023). It also includes an additional function (bow_tie()) developed and built by the author Sarah K. Crockford, with conceptual input from Michael V. Lombardo. 
 
 # Project background
 
