@@ -15,7 +15,7 @@ $ git add .
 
 $ git commit - m "your message here"
 
-$ git push origin master 
+$ git push origin main 
 or 
 $ git push origin master
 
