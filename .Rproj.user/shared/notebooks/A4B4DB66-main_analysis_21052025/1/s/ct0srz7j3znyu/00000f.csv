@@ -1,0 +1,33 @@
+"0","import numpy as np"
+"0","import pandas as pd"
+"0","import seaborn as sns"
+"0","import glob"
+"0","import os"
+"0",""
+"0","import matplotlib.pyplot as plt"
+"0","from matplotlib.pyplot import figure"
+"0",""
+"0","path = ""/Users/scrockford/Library/CloudStorage/OneDrive-FondazioneIstitutoItalianoTecnologia/triangle_similarity_language/results/final_similarity_matrices/AQ_mat/*.csv"""
+"0",""
+"0","cmap = 'viridis'"
+"0",""
+"0","for fname in glob.glob(path):"
+"0","  "
+"0","  data2plot = pd.read_csv(fname)"
+"0","  plotname = os.path.basename(fname)"
+"0","  plotname = plotname.replace("".csv"", """")"
+"0","  "
+"0","  plt.figure()"
+"0","  plt.title(plotname, fontsize =20)"
+"0","  sns.heatmap(data2plot, cmap = cmap, square=True, cbar=True, xticklabels=False, yticklabels=False)"
+"0","  "
+"0","  plt.show()"
+"0","  "
+"0",""
+"1","<Figure size 640x480 with 0 Axes>
+Text(0.5, 1.0, 'center_value_1')
+<Axes: title={'center': 'center_value_1'}>
+<Figure size 640x480 with 0 Axes>
+Text(0.5, 1.0, 'behave_nn')
+<Axes: title={'center': 'behave_nn'}>
+"
