@@ -28,7 +28,8 @@ Below, we'll explain the theory behind these models and the equations used to co
 2) **Convergence**:
 3) **Divergence**:
 4) **Bow Tie**:
-
+5) **Punctuacted**:
+   
 *I hope to continue adding more models and testing new theoretical similarity 'shapes'. So check back on this page to see if I've updated the package with more similarity functions!*
 
 # Installation 
