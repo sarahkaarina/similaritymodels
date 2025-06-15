@@ -182,6 +182,50 @@ bow_tie <- function(behave_data, center_value){
 
 } # end function bow_tie
 
+#' Function to compute punctuacted similarity, adjusted for nn effects
+#'
+#' @param behave_data ordered vector of data you want to compute similarity on
+#' @param center_value the value around which you want to center your similarity matrix
+#' @return n x n similarity matrix
+#' @export
+punctuated <- function(behave_data, center_value){
+
+  punctuated_df <- data.frame()
+
+  for (i in 1:length(behave_data)){
+    for (j in 1:length(behave_data)){
+
+      mean_pair <- (behave_data[[i]] + behave_data[[j]])/2
+
+      difference <- 1 + (abs(behave_data[[i]]-behave_data[[j]])/100)
+
+      variance_pair2center <- abs((mean_pair - center_value))
+
+      diff_weight <- variance_pair2center/difference
+
+      # NEW: 15/06/2025
+      # When testing on real data, I noticed that the in this version of the bow tie model
+      # I get this huge wave (fascia?) of dissimilarity through the lower left and upper right corner
+      # which assumes complete dissimilarity around the center point
+      # HOWEVER, this may not always be true
+      # as in there, may be instances where nearest neighbour effects still apply BUT
+      # there is encroaching dissimilarity around your centered value
+      # so instead of a TRUE nearest neighbours, you have data that essentially looks like
+      # two square of similiarity in your upper left and lower right corners, 'sinched'
+      # at your centered value
+      #
+      # To model this, I simply add the nearest neighbour computation into our punctuated similarity (bow tie) computation
+
+      output_nn <- sample_max - (abs(behave_data[[i]] - behave_data[[j]]))
+
+      punctuated_df[i, j] <- (diff_weight + output_nn)
+
+    }}
+
+  return(punctuated_df)
+
+} # end function punctuated
+
 #' Function to scale your similarity matrix and set diagonal to 1
 #'
 #' @param similarity_matrix the matrix you get out of running one of the similarity models (i.e., divergence(your_mat))
