@@ -191,6 +191,7 @@ bow_tie <- function(behave_data, center_value){
 punctuated <- function(behave_data, center_value){
 
   punctuated_df <- data.frame()
+  sample_max <- max(behave_data)
 
   for (i in 1:length(behave_data)){
     for (j in 1:length(behave_data)){
