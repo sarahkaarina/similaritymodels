@@ -15,6 +15,22 @@ $ git add .
 
 $ git commit - m "your message here"
 
+$ git push origin master 
+or 
 $ git push origin master
 
 The last line will prompt you to enter your credentials (N.B. you will need a personal access token, **your git password won't work**).
+
+_Check your branch_
+
+$ git branch
+
+_Add main_
+
+$ git checkout main
+
+_IF main doesn't exist_
+
+$ git fetch origin
+$ git checkout -b main origin/main
+
