@@ -7,7 +7,7 @@
 fix_diagonal(similarity_matrix, index, organize_row)
 }
 \arguments{
-\item{similarity_matrix}{the matrix you get out of running one of the similarity models (i.e., divergence(your_mat))}
+\item{similarity_matrix}{the matrix you get out of running one of the similarity models (i.e., convergence(your_mat))}
 
 \item{index}{the ordered list of subject/participant ids}
 

@@ -112,29 +112,6 @@ convergence <- function(behave_data){
   return(convergence_df)
 }
 
-#' Function to compute divergence similarity
-#'
-#' @param behave_data ordered vector of data you want to compute similarity on
-#' @return n x n similarity matrix
-#' @export
-divergence <- function(behave_data){
-
-  divergence_df <- data.frame()
-
-  sample_max <- max(behave_data)
-
-  for (i in 1:length(behave_data)){
-    for (j in 1:length(behave_data)){
-
-      pair_vec <- c(behave_data[[i]], behave_data[[j]])
-      output_conv <- mean(pair_vec)
-      divergence_df[i, j] <- (sample_max - output_conv)
-
-    }}
-
-  return(divergence_df)
-}
-
 #' Function to compute bow tie similarity
 #'
 #' @param behave_data ordered vector of data you want to compute similarity on
@@ -229,7 +206,7 @@ punctuated <- function(behave_data, center_value){
 
 #' Function to scale your similarity matrix and set diagonal to 1
 #'
-#' @param similarity_matrix the matrix you get out of running one of the similarity models (i.e., divergence(your_mat))
+#' @param similarity_matrix the matrix you get out of running one of the similarity models (i.e., convergence(your_mat))
 #' @param index the ordered list of subject/participant ids
 #' @param organize_row set to TRUE if you want to add rownames that correspond to your ids to your matrix
 #' @return clean similarity matrix
@@ -252,7 +229,7 @@ fix_diagonal <- function(similarity_matrix, index, organize_row){
 #' @param center_value list of values around which you want to center your bow_tie similarity matrix
 #' @param resultpath the path to the directory where you want your resulting similarity matrices to be stored as .csv files
 #' @param save_out if set to TRUE, will save out your similarity matrices as .csv files in your resultpath directory
-#' @return list containing all four similarity matrices (nearest neighbours, convergence, divergence, and bow-tie)
+#' @return list containing all four similarity matrices (nearest neighbours, convergence, bow-tie, and punctuated)
 #' @export
 make_similarity_matrices <- function(behave_vec,
                                      index,
@@ -266,22 +243,27 @@ make_similarity_matrices <- function(behave_vec,
   nn_name <- "behave_nn"
   behave_conv <- convergence(behave_vec) # minimum pair
   conv_name <- "behave_conv"
-  behave_div <- divergence(behave_vec) # max(sample) - minimum pair
-  div_name <- "behave_div"
 
-  df_names_finn <- c(nn_name, conv_name, div_name)
+  df_names_finn <- c(nn_name, conv_name)
 
   df_names_behave <- c()
+  df_names_punctuated <- c()
+
   for (i in 1:length(center_value_list)){
     behave_bow <- bow_tie(behave_vec, center_value_list[i]) # see function
+    behave_punct <- punctuated(behave_vec, center_value_list[i]) # see function
 
-    df_name <- paste0('center_value_', i)
+    df_name <- paste0('bow_tie_', center_value_list[i])
     df_names_behave[i] <- df_name
 
+    df_name_punct <- paste0('punctuated_', center_value_list[i])
+    df_names_punctuated[i] <- df_name_punct
+
     assign(df_name, behave_bow)
+    assign(df_name_punct, behave_punct)
   }
 
-  df_names <- c(df_names_finn, df_names_behave)
+  df_names <- c(df_names_finn, df_names_behave, df_names_punctuated)
 
   dataframes2loopthrough <- do.call("list", mget(df_names))
 
@@ -307,9 +289,9 @@ make_similarity_matrices <- function(behave_vec,
 
   }
 
-  #dataframes2loopthrough <- do.call("list", mget(c("behave_nn", "behave_conv", "behave_div","behave_bow")))
+  final_dataframes2loopthrough <- do.call("list", mget(df_names))
 
-  return(dataframes2loopthrough)
+  return(final_dataframes2loopthrough)
 
 } # end function run behave model similarity
 

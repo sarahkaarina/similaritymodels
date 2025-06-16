@@ -2,7 +2,6 @@
 
 export(bow_tie)
 export(convergence)
-export(divergence)
 export(fix_diagonal)
 export(make_similarity_matrices)
 export(nearest_neighbours)

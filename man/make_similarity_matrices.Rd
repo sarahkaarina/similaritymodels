@@ -24,7 +24,7 @@ make_similarity_matrices(
 \item{center_value}{list of values around which you want to center your bow_tie similarity matrix}
 }
 \value{
-list containing all four similarity matrices (nearest neighbours, convergence, divergence, and bow-tie)
+list containing all four similarity matrices (nearest neighbours, convergence, bow-tie, and punctuated)
 }
 \description{
 Function to compute all similarity models at once and collect them into a single list
