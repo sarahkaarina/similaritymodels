@@ -1,8 +1,8 @@
 # Build theoretical similarity models w/ similaritymodels
 
-**About**: R package to create similarity models (nearest neighbors, convergence, divergence, and bow tie)
+**About**: R package to create similarity models (nearest neighbors, convergence, bow tie, and punctuated)
 
-The R package 'similarity models' uses functions built on the basis of previous work by Finn et al., (2020) and Camacho et., (2023). It also includes an additional function (bow_tie()) developed and built by the author Sarah K. Crockford, with conceptual input from Michael V. Lombardo. 
+The R package 'similarity models' uses functions built on the basis of previous work by Finn et al., (2020) (and extended by Camacho et., (2023)*). It also includes an additional two functions (bow_tie() and punctuated()) developed and built by the author Sarah K. Crockford, with conceptual input from Michael V. Lombardo. 
 
 # Project background
 
@@ -14,7 +14,7 @@ In the second approach, using linear models, we face another dilemma: what if th
 
 As research moves towards more naturalistic paradigms in order to understand how people process the true world around them, so does the introduction of naturalistic paradigms facilitate the inclusion of larger, more disparate population samples. If we look at both multilingual and autistic children, it means that children with varying degrees of expressive multilingualism and autistic children with varying degrees of verbal ability can take part in experiments that don't require specific verbal skills and/or require little to no verbal instructions.
 
-To this aim, this R package ('similaritymodels') has collected all three models developed by Finn et al., (2020) and also used by Camacho et al., (2023), namely: nearest neighbors, convergence, and divergence. It also adds a new model, developed to model similarity a the tail end extremes of a given sample, so called 'bow tie'. 
+To this aim, this R package ('similaritymodels') has collected all three models developed by Finn et al., (2020) and also used by Camacho et al., (2023), namely: nearest neighbors and convergence. It also adds a new model, developed to model similarity a the tail end extremes of a given sample, so called 'bow tie', with a new extension called 'punctuated'. 
 
 Each of these similarity models takes a n x 1 vector (or single column of n rows) and computes a similarity matrix for each, individual value in your vector (or each individual row in your single column, if you prefer to think that way). Each function then returns a n x n matrix of similarity values, where your diagonal will be value(i) to value(i) similarity. 
 
@@ -26,7 +26,7 @@ Below, we'll explain the theory behind these models and the equations used to co
 
 1) **Nearest Neighbours**: 
 2) **Convergence**:
-3) **Divergence**:
+3) **Divergence**: NOT INCLUDED
 4) **Bow Tie**:
 5) **Punctuacted**:
    
@@ -48,11 +48,17 @@ If you use this package, please cite:
 
 Crockford, S. K., Lombardo, M. V., (2024). Modelling developmental changes in narrative similarity. *Work in progress* 
 
-Also consider citing:
-
 Finn, E. S., Glerean, E., Khojandi, A. Y., Nielson, D., Molfese, P. J., Handwerker, D. A., & Bandettini, P. A. (2020). Idiosynchrony: From shared responses to individual differences during naturalistic neuroimaging. NeuroImage, 215, 116828.
 
+Consider citing:
+
 Camacho, M. C., Nielsen, A. N., Balser, D., Furtado, E., Steinberger, D. C., Fruchtman, L., ... & Barch, D. M. (2023). Large-scale encoding of emotion concepts becomes increasingly similar between individuals from childhood to adolescence. Nature neuroscience, 26(7), 1256-1266.
+
+# Licensing 
+
+* It was not clear to me whether Camacho et al's divergence model was covered by Commons License usage, as they did not include a licensing agreement in their git-hub repository. Therefore, their divergence model is NOT included in this library.
+
+Usage and adaptations of Finn et al., (https://github.com/esfinn/intersubj_rsa)'s is instead covered by a standard MIT license and was therefore included in this library.  
 
 # Contact information
 
