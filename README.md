@@ -34,7 +34,7 @@ Below, we'll explain the theory behind these models and the equations used to co
 
 # Installation 
 
-To install the package into your R/RStudio enviornment, use the folloing command:
+To install the package into your R/RStudio enviornment, use the following command:
 
 $ devtools::install_github("sarahkaarina/similaritymodels")
 
@@ -56,7 +56,7 @@ Camacho, M. C., Nielsen, A. N., Balser, D., Furtado, E., Steinberger, D. C., Fru
 
 # Licensing 
 
-* It was not clear to me whether Camacho et al's divergence model was covered by Commons License usage, as they did not include a licensing agreement in their git-hub repository. Therefore, their divergence model is NOT included in this library.
+(*) It was not clear to me whether Camacho et al's divergence model was covered by Commons License usage, as they did not include a licensing agreement in their git-hub repository. Therefore, their divergence model is NOT included in this library.
 
 Usage and adaptations of Finn et al., (https://github.com/esfinn/intersubj_rsa)'s is instead covered by a standard MIT license and was therefore included in this library.  
 
