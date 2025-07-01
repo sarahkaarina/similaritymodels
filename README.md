@@ -68,7 +68,8 @@ For any further queries, you can contact me at:
 
 **personal email**: sarahcrockford@mac.com
 
-**current institutional email**: sarah.crockford@iit.it
+**institutional email V1**: sarah.crockford@iit.it
 
 _meet the new email, same as the old email_
-**new institutional email**: skc48@cam.ac.uk
+
+**institutional email V2**: skc48@cam.ac.uk
