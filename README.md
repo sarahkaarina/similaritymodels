@@ -46,7 +46,7 @@ $ install.packages("devtools")
 
 If you use this package, please cite:
 
-Crockford, S. K. (2025). Modelling paired similarity using 'punctuated' dynamics. *Work in progress* 
+Crockford, S. K. (2025). Modelling punctuated similarity. *Work in progress* 
 
 Finn, E. S., Glerean, E., Khojandi, A. Y., Nielson, D., Molfese, P. J., Handwerker, D. A., & Bandettini, P. A. (2020). Idiosynchrony: From shared responses to individual differences during naturalistic neuroimaging. NeuroImage, 215, 116828.
 
