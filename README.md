@@ -27,8 +27,8 @@ Below, we'll explain the theory behind these models and the equations used to co
 1) **Nearest Neighbours**: 
 2) **Convergence**:
 3) **Divergence**: NOT INCLUDED
-4) **Bow Tie**:
-5) **Punctuacted**:
+4) **Punctuated (Bow Tie)**:
+5) **Punctuated revised (Punctuacted)**:
    
 *I hope to continue adding more models and testing new theoretical similarity 'shapes'. So check back on this page to see if I've updated the package with more similarity functions!*
 
